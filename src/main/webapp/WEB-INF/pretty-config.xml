@@ -1,0 +1,61 @@
+<pretty-config xmlns="http://ocpsoft.com/prettyfaces/3.1.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.1.1
+	http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.1.1.xsd">
+
+	<url-mapping id="SendClaim">
+		<pattern value="/claim/#{id}" />
+		<view-id value="/claim.jsf" />
+	</url-mapping>
+
+	<url-mapping id="index">
+		<pattern value="/" />
+		<view-id value="/index.jsf" />
+	</url-mapping>
+
+	<url-mapping id="indexSearch">
+		<pattern value="/search/#{requestPhrase}/start/#{start}" />
+		<view-id value="/index.jsf" />
+	</url-mapping>
+
+	<url-mapping id="userLogin">
+		<pattern value="/auth" />
+		<view-id value="/userLogin.jsf" />
+	</url-mapping>
+
+	<url-mapping id="userRegistration">
+		<pattern value="/register" />
+		<view-id value="/userRegistration.jsf" />
+	</url-mapping>
+
+	<url-mapping id="indexer">
+		<pattern value="/indexall" />
+		<view-id value="/indexer.jsf" />
+	</url-mapping>
+
+	<url-mapping id="pmincoming">
+		<pattern value="/pm/incoming/all" />
+		<view-id value="/pmincoming.jsf" />
+	</url-mapping>
+
+	<url-mapping id="pmincomingAnswer">
+		<pattern value="/pm/incoming/#{id}" />
+		<view-id value="/pmanswer.jsf" />
+	</url-mapping>
+
+	<url-mapping id="pmoutgoing">
+		<pattern value="/pm/sent/all" />
+		<view-id value="/pmoutgoing.jsf" />
+	</url-mapping>
+
+	<url-mapping id="pmoutgoingView">
+		<pattern value="/pm/sent/#{id}" />
+		<view-id value="/pmoutgoingview.jsf" />
+	</url-mapping>
+
+	<url-mapping>
+		<pattern value="/feedback" />
+		<view-id value="/feedback.jsf" />
+	</url-mapping>
+
+</pretty-config>

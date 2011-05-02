@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j">
+<h:head>
+    <title><ui:insert name="title">Welcome to dailySearch</ui:insert></title>
+    <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/common.css" />
+</h:head>
+<h:body>
+<div id="wrapper">
+    <noscript>
+        <div id="noscript">Для нормальной работы необходимо разрешить использование JavaScript в настройках браузера</div>
+    </noscript>
+    <div id="header">
+        <ui:include src="/templates/include/header.xhtml" />
+    </div>
+    <div id="content">
+        <ui:insert name="content">
+        </ui:insert>
+    </div>
+    <div id="blobber"></div>
+</div>
+<div id="pager">
+    <ui:insert name="pager" />
+</div>
+<div id="footer">
+    <hr class="hrhard" />
+    <h:outputText value="#{i18n['main.copy']}" escape="false" />
+</div>
+</h:body>
+</html>

@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+    <div style="line-height: 200%;">
+        <table border="0">
+        <tr>
+            <td>
+                <h:graphicImage styleClass="preview" alt="Interesting? Let's get it!" url="#{imgPath}" />
+            </td>
+            <td>
+                <h:outputLink target="_blank" value="#{url}">
+                    <h:outputText value="#{title}" />
+                </h:outputLink>
+                <h:outputText value=" " rendered="#{user.isLoggedIn}" />
+                <h:outputLink target="_blank" value="#{contextPath}/claim/#{id}" rendered="#{user.isLoggedIn}">
+                    <h:outputText value="[Claim]" />
+                </h:outputLink>
+                <br />
+                <h:outputText escape="false" value="#{content}" />
+            </td>
+        </tr>
+	</table>
+	</div>
+</ui:composition>

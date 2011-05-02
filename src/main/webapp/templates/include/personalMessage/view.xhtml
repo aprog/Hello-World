@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich">
+
+<div>
+<h:panelGroup rendered="#{user.isLoggedIn}">
+    <h:outputText value="#{i18n['personalmessages.view.to']}" /><br />
+    <rich:list value="#{message.personalMessage.recipients}" var="recipient">
+        <h:outputText value="#{recipient.user.name}" />
+    </rich:list>
+    <br />
+    <h:outputText value="#{i18n['personalmessages.view.subject']} #{message.personalMessage.subject}" /><br />
+    
+    <h:form id="DeletePersonalMessageForm">
+        <h:panelGroup style="text-align: left">
+            <rich:message style="color:red; line-height: 200%;" id="errorMessages" layout="list" />
+        </h:panelGroup>
+        <h:commandLink action="#{message.deletePersonalMessage}">
+            <h:outputText value="#{i18n['personalmessages.view.deletelink']}" />
+        </h:commandLink>
+    </h:form>
+    <h:outputText value="#{i18n['personalmessages.view.message']} #{message.personalMessage.body}" id="originalText" escape="false" />
+
+</h:panelGroup>
+</div>
+
+</ui:composition>

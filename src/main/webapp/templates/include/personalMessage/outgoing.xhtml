@@ -1,0 +1,43 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich">
+
+<div>
+    <rich:dataTable id="OutgoingMessageTable" styleClass="pmtable" value="#{message.outgoingMessages}" var="pm" rendered="#{user.isLoggedIn}">
+        <f:facet name="header">
+            <rich:columnGroup>
+                <h:column>
+                    <h:outputText value="#{i18n['personalmessages.outgoing.subject']}" />
+                </h:column>
+                <h:column>
+                    <h:outputText value="#{i18n['personalmessages.outgoing.to']}" />
+                </h:column>
+                <h:column>
+                    <h:outputText value="#{i18n['personalmessages.outgoing.date']}" />
+                </h:column>
+            </rich:columnGroup>
+        </f:facet>
+
+        <h:column>
+            <h:outputLink value="#{pm.url}">
+                <h:outputText value="#{pm.message.subject}" />
+            </h:outputLink>
+        </h:column>
+        <h:column>
+        <rich:list value="#{pm.message.recipients}" var="recipient">
+            <h:outputText value="#{recipient.user.name}" />
+        </rich:list>
+        </h:column>
+         
+        <h:column>
+            <h:outputText value="#{pm.message.creationTime}">
+                <f:convertDateTime type="both" dateStyle="full" />
+            </h:outputText>
+        </h:column>
+    </rich:dataTable>
+</div>
+
+</ui:composition>
