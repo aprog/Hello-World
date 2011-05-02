@@ -1,0 +1,20 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<div>
+	<div style="height: 30px">
+	<h:form method="get" id="searchForm" style="display: inline; margin: 0px; padding: 0px;">
+        <h:inputText style="height: 100%; font-size: 150%" id="requestPhrase" value="#{requestPhrase}" />
+        <h:commandButton action="#{luceneRecord.searchRedirect}" style="margin-left: -5px; height: 112%; vertical-align: top;" value="#{i18n['main.search.button']}" />
+	</h:form>
+    <!-- <h:commandButton onclick="getElementById('searchForm').submit()" style="margin-left: -5px; height: 112%; vertical-align: top;" value="Find It!" /> -->
+	</div>
+	</div>
+    <script type="text/javascript">
+        document.getElementById('searchForm:requestPhrase').focus();
+    </script>
+</ui:composition>

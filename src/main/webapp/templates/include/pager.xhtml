@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich">
+
+    <div>
+        <h:outputLink value="#{pager.prevPageLink}" rendered="#{pager.currentPage != pager.firstPage}">
+            <h:outputText value="#{i18n['pager.page.previous']}" />
+        </h:outputLink>
+        <h:outputText value="#{i18n['pager.page.previous']}" rendered="#{pager.currentPage == pager.firstPage}" />
+        <h:outputText value=" | " />
+
+        <ui:repeat var="page" value="#{pager.pagesLinks}">
+            <h:outputLink value="#{page.url}" rendered="#{pager.currentPage != page.name}">
+                <h:outputText value="#{page.name}" />
+            </h:outputLink>
+            <h:outputText value="#{page.name}" rendered="#{pager.currentPage == page.name}" />
+            <h:outputText value=" | " />
+        </ui:repeat>
+
+        <h:outputLink value="#{pager.nextPageLink}" rendered="#{pager.currentPage != pager.lastPage}">
+            <h:outputText value="#{i18n['pager.page.next']}" />
+        </h:outputLink>
+        <h:outputText value="#{i18n['pager.page.next']}" rendered="#{pager.currentPage == pager.lastPage}" />
+    </div>
+</ui:composition>

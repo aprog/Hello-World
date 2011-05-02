@@ -1,0 +1,96 @@
+body,html {
+	margin: 0px 0px 0px 0px;
+	font-family: Verdana, sans-serif;
+	min-width: 950px;
+	height: 100%;
+}
+
+body a {
+	font-size: 16px;
+}
+
+th {
+	text-align: left;
+}
+
+td,th {
+	padding-right: 5px;
+}
+
+hr {
+	height: 1px;
+	border: none;
+	border-top: 1px solid lightsteelblue;
+}
+
+.preview {
+	float: left;
+	margin: 7px 7px 7px 0px;
+	width: 200px;
+	border: 0;
+}
+
+.hrhard {
+	height: 1px;
+	border: none;
+	border-top: 1px solid lightblue;
+}
+
+#content {
+	min-height: 400px;
+	margin: 30px 10px 50px 10px;
+}
+
+#header a {
+	font-size: 11px;
+	color: #CCFFFF;
+}
+
+#pager {
+	text-align: center;
+}
+
+#footer {
+	text-align: center;
+	height: 30px;
+	margin: 0px 0px 0px 0px;
+}
+
+#blobber {
+	height: 30px;
+}
+
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;
+}
+
+
+#noscript {
+	font-weight: bold;
+	color: red;
+	text-align: center;
+}
+
+#centered {
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.centr_div {
+	top: 100px;
+	left: 50%;
+	position: relative;
+}
+
+.rf-msg-err {
+	display: block;
+}
+
+.pmtable {
+	width: 100%;
+}

@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<h:panelGroup id="LoginPanel" styleClass="centr_div">
+    	<rich:panel header="#{i18n['login.form.header']}" style="width: 600px" rendered="#{not user.isLoggedIn}">
+			<h:panelGroup style="text-align: left">
+				<rich:messages style="color:red; line-height: 200%;" id="errorMessages" layout="list" ajaxRendered="true" />
+			</h:panelGroup>
+			<h:form id="LoginForm">
+				<h:outputText value="#{i18n['login.form.login']}" />
+				<br />
+				<h:inputText value="#{user.name}" id="login" tabindex="0" required="true">
+					<rich:validator />
+				</h:inputText>
+				<br />
+				<h:outputText value="#{i18n['login.form.password']}" />
+				<br />
+				<h:inputSecret value="#{user.password}" id="password" required="true">
+					<rich:validator />
+				</h:inputSecret>
+				<br />
+				<a4j:commandButton id="submitButton" value="#{i18n['login.form.button.login']}" type="submit"
+					onclick="this.disabled=true"
+					oncomplete="document.getElementById('LoginForm:submitButton').disabled=false"
+					action="#{user.loginUser}" />
+			</h:form>
+		</rich:panel>
+	</h:panelGroup>
+    <script type="text/javascript">
+        document.getElementById("LoginForm:login").focus();
+    </script>
+</ui:composition>
