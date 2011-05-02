@@ -31,7 +31,7 @@ import org.hibernate.annotations.ParamDef;
 public class User extends ObjectEntity implements Serializable {
 
 	private static final long serialVersionUID = 970870639633089395L;
-
+	// here some comments for it
 	@Column(length = 100)
 	@NotNull
 	private String name;
