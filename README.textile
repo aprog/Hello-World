@@ -15,7 +15,3 @@ h2. Troubleshooting
 
 On some OS systems you will need to permit access to X Window system.
 To do it, simply run @xhost +localhost:username@.
-
-h2. Questions?
-
-If you have any questions, please feel free to email me: "kyrychok@gmail.com":mailto:kyrychok@gmail.com 
